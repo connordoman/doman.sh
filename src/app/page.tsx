@@ -32,7 +32,7 @@ export default async function Home() {
               Requires <code className="bg-accent px-1 py-0.5 rounded-sm inline-flex">go</code> to be installed
             </p>
           </header>
-          <CodeBlock lang="shell">
+          <CodeBlock lang="shell" copyOverride="go install doman.sh/cli@latest">
             <span className="inline-flex items-center gap-2 font-mono">
               <span className="text-[rgb(255,166,87)]">{"go"}</span>
               <span className="text-[rgb(201,209,217)]">{"install"}</span>
