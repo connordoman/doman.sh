@@ -1,28 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { CodeBlock } from "@/components/ui/code-block";
 import { Separator } from "@/components/ui/separator";
+import { DOMAN_REPO_URL } from "@/lib/const";
 import { readPublicFile } from "@/lib/server";
 import { ArrowRightIcon } from "lucide-react";
 
 export default async function Home() {
-  const unixInstallScript = await readPublicFile("install.sh");
-
   return (
     <div className="flex flex-col items-center pt-6 px-6">
       <header className="text-center my-6 space-y-2">
         <h1 className="text-4xl font-bold">doman</h1>
         <p className="text-muted-foreground">
-          A few useful tools for <strong>dom</strong>ain-<strong>man</strong>agement.
+          A few useful tools for <strong>dom</strong>ain-<strong>man</strong>agement
           <br />
-          (Not DNS though)
+          (but not DNS though)
         </p>
       </header>
       <main className="w-full max-w-md [&_section]:space-y-3 space-y-6">
         <section className="flex flex-col items-center">
-          <Button size="lg">
-            Learn More
-            <ArrowRightIcon />
-          </Button>
+          <a href={DOMAN_REPO_URL}>
+            <Button size="lg">
+              Learn More
+              <ArrowRightIcon />
+            </Button>
+          </a>
         </section>
         <section>
           <header className="space-y-1">
@@ -31,7 +32,7 @@ export default async function Home() {
               Requires <code className="bg-accent px-1 py-0.5 rounded-sm inline-flex">go</code> to be installed
             </p>
           </header>
-          <CodeBlock lang="shell" showLineNumbers lineCountOverride={1}>
+          <CodeBlock lang="shell">
             <span className="inline-flex items-center gap-2 font-mono">
               <span className="text-[rgb(255,166,87)]">{"go"}</span>
               <span className="text-[rgb(201,209,217)]">{"install"}</span>

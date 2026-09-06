@@ -13,8 +13,8 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Doman CLI",
-  description: "Download the Doman CLI today!",
+  title: "doman CLI",
+  description: "Download the doman CLI today.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
