@@ -52,6 +52,8 @@ export function CodeBlock({
       if (copyable && "navigator" in window) {
         window.navigator.clipboard.writeText(copyable);
         toast.success("Copied to clipboard", { icon: <CopyCheckIcon className="size-4" /> });
+      } else {
+        toast.warning("Nothing to copy (?)");
       }
     } catch {
       toast.error("Failed to copy code");
