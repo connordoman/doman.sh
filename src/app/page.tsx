@@ -47,11 +47,11 @@ export default async function Home() {
 
         <section>
           <h3>macOS/Linux</h3>
-          <CodeBlock lang="curl">{`curl -fsSL https://doman.sh/install.sh`}</CodeBlock>
+          <CodeBlock lang="curl" link="/install.sh">{`curl -fsSL https://doman.sh/install.sh`}</CodeBlock>
         </section>
         <section>
           <h3>Windows</h3>
-          <CodeBlock lang="powershell">{`irm https://doman.sh/install.ps1 | iex`}</CodeBlock>
+          <CodeBlock lang="powershell" link="/install.ps1">{`irm https://doman.sh/install.ps1 | iex`}</CodeBlock>
         </section>
       </main>
     </div>

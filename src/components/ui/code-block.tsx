@@ -1,10 +1,11 @@
 "use client";
 
-import { CopyCheckIcon, CopyIcon } from "lucide-react";
+import { CopyCheckIcon, CopyIcon, ExternalLinkIcon, FileDownIcon } from "lucide-react";
 import { Button } from "./button";
 import { toast } from "sonner";
 import { Item, ItemActions, ItemContent, ItemDescription, ItemHeader, ItemTitle } from "./item";
 import Syntax from "./syntax";
+import { ReferenceButton } from "./reference-button";
 
 interface LineNumbersProps {
   code?: string;
@@ -33,6 +34,8 @@ interface CodeBlockProps {
   showLineNumbers?: boolean;
   lineCountOverride?: number;
   copyOverride?: string;
+  link?: string | URL;
+  linkIcon?: React.ReactNode;
 }
 
 export function CodeBlock({
@@ -43,6 +46,8 @@ export function CodeBlock({
   showLineNumbers = false,
   lineCountOverride,
   copyOverride,
+  link,
+  linkIcon = <FileDownIcon />,
 }: CodeBlockProps) {
   const isString = typeof children === "string";
 
@@ -72,6 +77,7 @@ export function CodeBlock({
         </div>
 
         <ItemActions>
+          {link && <ReferenceButton href={link.toString()} icon={linkIcon} />}
           <Button variant="ghost" size="icon" disabled={!children} onClick={handleCopy}>
             <CopyIcon />
           </Button>
